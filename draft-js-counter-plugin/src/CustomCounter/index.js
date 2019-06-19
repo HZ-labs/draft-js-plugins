@@ -20,7 +20,7 @@ class CustomCounter extends Component {
   render() {
     const { store, limit, countFunction } = this.props;
     const plainText = store.getEditorState().getCurrentContent().getPlainText('');
-    const count = countFunction(plainText);
+    const count = countFunction(plainText, limit);
     const classNames = this.getClassNames(count, limit);
 
     return <span className={classNames}>{count}</span>;
